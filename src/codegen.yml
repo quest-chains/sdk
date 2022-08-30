@@ -1,0 +1,14 @@
+overwrite: true
+schema: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-rinkeby'
+generates:
+  src/graphql/types.ts:
+    config:
+      withHooks: false
+    documents:
+      - src/graphql/**/(!(*.d)).graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-urql
+      - add:
+          content: '/* eslint-disable */'
