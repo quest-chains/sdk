@@ -15,17 +15,11 @@ import {
   QuestChainSearchQueryVariables,
 } from './types';
 
-export const getQuestChainAddresses = async (
-  chainId: string,
-  limit: number,
-): Promise<string[]> => {
+export const getQuestChainAddresses = async (chainId: string, limit: number): Promise<string[]> => {
   const { data, error } = await getClient(chainId)
-    .query<QuestChainAddressesQuery, QuestChainAddressesQueryVariables>(
-      QuestChainAddressesDocument,
-      {
-        limit,
-      },
-    )
+    .query<QuestChainAddressesQuery, QuestChainAddressesQueryVariables>(QuestChainAddressesDocument, {
+      limit,
+    })
     .toPromise();
   if (!data) {
     if (error) {
@@ -36,17 +30,11 @@ export const getQuestChainAddresses = async (
   return data.questChains.map(a => a.address);
 };
 
-export const getQuestChainInfo = async (
-  chainId: string,
-  address: string,
-): Promise<QuestChainInfoFragment | null> => {
+export const getQuestChainInfo = async (chainId: string, address: string): Promise<QuestChainInfoFragment | null> => {
   const { data, error } = await getClient(chainId)
-    .query<QuestChainInfoQuery, QuestChainInfoQueryVariables>(
-      QuestChainInfoDocument,
-      {
-        address: address.toLowerCase(),
-      },
-    )
+    .query<QuestChainInfoQuery, QuestChainInfoQueryVariables>(QuestChainInfoDocument, {
+      address: address.toLowerCase(),
+    })
     .toPromise();
   if (!data) {
     if (error) {
@@ -57,18 +45,12 @@ export const getQuestChainInfo = async (
   return data.questChain ?? null;
 };
 
-export const getQuestChainsFromSearch = async (
-  chainId: string,
-  search: string,
-): Promise<QuestChainInfoFragment[]> => {
+export const getQuestChainsFromSearch = async (chainId: string, search: string): Promise<QuestChainInfoFragment[]> => {
   const { data, error } = await getClient(chainId)
-    .query<QuestChainSearchQuery, QuestChainSearchQueryVariables>(
-      QuestChainSearchDocument,
-      {
-        search: search.toLowerCase(),
-        limit: 1000,
-      },
-    )
+    .query<QuestChainSearchQuery, QuestChainSearchQueryVariables>(QuestChainSearchDocument, {
+      search: search.toLowerCase(),
+      limit: 1000,
+    })
     .toPromise();
   if (!data) {
     if (error) {
@@ -79,18 +61,12 @@ export const getQuestChainsFromSearch = async (
   return data.questChains;
 };
 
-export const getCreatedQuestChains = async (
-  chainId: string,
-  address: string,
-): Promise<QuestChainInfoFragment[]> => {
+export const getCreatedQuestChains = async (chainId: string, address: string): Promise<QuestChainInfoFragment[]> => {
   const { data, error } = await getClient(chainId)
-    .query<CreatedQuestChainsInfoQuery, CreatedQuestChainsInfoQueryVariables>(
-      CreatedQuestChainsInfoDocument,
-      {
-        user: address.toLowerCase(),
-        limit: 1000,
-      },
-    )
+    .query<CreatedQuestChainsInfoQuery, CreatedQuestChainsInfoQueryVariables>(CreatedQuestChainsInfoDocument, {
+      user: address.toLowerCase(),
+      limit: 1000,
+    })
     .toPromise();
   if (!data) {
     if (error) {

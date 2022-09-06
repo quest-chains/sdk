@@ -1,16 +1,9 @@
 import { getClient, SUPPORTED_NETWORKS } from './client';
-import {
-  GlobalInfoFragment,
-  GlobalInfoDocument,
-  GlobalInfoQuery,
-  GlobalInfoQueryVariables,
-} from './types';
+import { GlobalInfoFragment, GlobalInfoDocument, GlobalInfoQuery, GlobalInfoQueryVariables } from './types';
 
-export const getChainInfo = async (
-  chainId: string,
-): Promise<GlobalInfoFragment | null> => {
+export const getChainInfo = async (chainId: string): Promise<GlobalInfoFragment | null> => {
   const { data, error } = await getClient(chainId)
-    .query<GlobalInfoQuery, GlobalInfoQueryVariables>(GlobalInfoDocument)
+    .query<GlobalInfoQuery, GlobalInfoQueryVariables>(GlobalInfoDocument, {})
     .toPromise();
   if (!data || !data.globals.length || data.globals[0].chainId !== chainId) {
     if (error) {
@@ -22,10 +15,7 @@ export const getChainInfo = async (
   return data.globals[0];
 };
 
-export const getGlobalInfo = async (): Promise<Record<
-  string,
-  GlobalInfoFragment
->> => {
+export const getGlobalInfo = async (): Promise<Record<string, GlobalInfoFragment>> => {
   const globalInfo: Record<string, GlobalInfoFragment> = {};
 
   await Promise.all(

@@ -14,18 +14,12 @@ export type UserStatus = {
   total: number;
 };
 
-export const getStatusForUser = async (
-  chainId: string,
-  address: string,
-): Promise<UserStatus[]> => {
+export const getStatusForUser = async (chainId: string, address: string): Promise<UserStatus[]> => {
   const { data, error } = await getClient(chainId)
-    .query<StatusForUserQuery, StatusForUserQueryVariables>(
-      StatusForUserDocument,
-      {
-        user: address.toLowerCase(),
-        limit: 1000,
-      },
-    )
+    .query<StatusForUserQuery, StatusForUserQueryVariables>(StatusForUserDocument, {
+      user: address.toLowerCase(),
+      limit: 1000,
+    })
     .toPromise();
   if (!data) {
     if (error) {
@@ -45,12 +39,8 @@ export const getStatusForUser = async (
     .map(value => {
       const chain = value[0].questChain;
       const total = chain.quests.filter(q => !q.paused).length;
-      const completed = value
-        .filter(a => !a.quest.paused)
-        .reduce((t, a) => t + (a.status === 'pass' ? 1 : 0), 0);
-      const updatedAt = value
-        .filter(a => !a.quest.paused)
-        .reduce((t, a) => (t > a.updatedAt ? t : a.updatedAt), '0');
+      const completed = value.filter(a => !a.quest.paused).reduce((t, a) => t + (a.status === 'pass' ? 1 : 0), 0);
+      const updatedAt = value.filter(a => !a.quest.paused).reduce((t, a) => (t > a.updatedAt ? t : a.updatedAt), '0');
       return { chain, completed, total, updatedAt: new Date(updatedAt) };
     });
 };

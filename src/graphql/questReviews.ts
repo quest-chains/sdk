@@ -11,13 +11,10 @@ export const getQuestChainsToReview = async (
   address: string,
 ): Promise<QuestChainReviewInfoFragment[]> => {
   const { data, error } = await getClient(chainId)
-    .query<QuestChainsReviewStatusQuery, QuestChainsReviewStatusQueryVariables>(
-      QuestChainsReviewStatusDocument,
-      {
-        reviewer: address.toLowerCase(),
-        limit: 1000,
-      },
-    )
+    .query<QuestChainsReviewStatusQuery, QuestChainsReviewStatusQueryVariables>(QuestChainsReviewStatusDocument, {
+      reviewer: address.toLowerCase(),
+      limit: 1000,
+    })
     .toPromise();
   if (!data) {
     if (error) {

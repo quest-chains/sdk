@@ -10,37 +10,34 @@ export type NetworkInfo = {
 export const SUPPORTED_NETWORK_INFO: NetworkInfo = {
   '0x89': {
     chainId: '0x89',
-    subgraphUrl:
-      'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-polygon',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-polygon',
   },
   '0x64': {
     chainId: '0x64',
-    subgraphUrl:
-      'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-xdai',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-xdai',
   },
   '0x4': {
     chainId: '0x4',
-    subgraphUrl:
-      'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-rinkeby',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-rinkeby',
   },
   '0x13881': {
     chainId: '0x13881',
-    subgraphUrl:
-      'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-mumbai',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-mumbai',
   },
 };
 
 export const SUPPORTED_NETWORKS = Object.keys(SUPPORTED_NETWORK_INFO);
 
-const clients: Record<string, Client> = Object.values(
-  SUPPORTED_NETWORK_INFO,
-).reduce<Record<string, Client>>((o, info) => {
-  o[info.chainId] = createClient({
-    url: info.subgraphUrl,
-    exchanges: [dedupExchange, fetchExchange],
-  });
-  return o;
-}, {});
+const clients: Record<string, Client> = Object.values(SUPPORTED_NETWORK_INFO).reduce<Record<string, Client>>(
+  (o, info) => {
+    o[info.chainId] = createClient({
+      url: info.subgraphUrl,
+      exchanges: [dedupExchange, fetchExchange],
+    });
+    return o;
+  },
+  {},
+);
 
 export const isSupportedNetwork = (chainId: string | undefined | null) =>
   chainId ? SUPPORTED_NETWORKS.includes(chainId) : false;
