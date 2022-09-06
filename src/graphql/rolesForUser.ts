@@ -1,7 +1,7 @@
 import { getClient } from './client';
 import { QuestChainInfoFragment, RolesForUserDocument, RolesForUserQuery, RolesForUserQueryVariables } from './types';
 
-export type RolesForUser = {
+export type UserRoles = {
   ownerOf: QuestChainInfoFragment[];
   adminOf: QuestChainInfoFragment[];
   editorOf: QuestChainInfoFragment[];
@@ -9,7 +9,7 @@ export type RolesForUser = {
   chainId: string;
 };
 
-export const getRolesForUser = async (chainId: string, address: string): Promise<RolesForUser | null> => {
+export const getRolesForUser = async (chainId: string, address: string): Promise<UserRoles | null> => {
   const { data, error } = await getClient(chainId)
     .query<RolesForUserQuery, RolesForUserQueryVariables>(RolesForUserDocument, {
       address: address.toLowerCase(),
