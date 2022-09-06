@@ -4,7 +4,10 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=14"
   },
@@ -30,7 +33,10 @@
     "url": "https://github.com/quest-chains/sdk.git"
   },
   "homepage": "https://github.com/quest-chains/sdk",
-  "keywords": ["ethereum", "quest-chains"],
+  "keywords": [
+    "ethereum",
+    "quest-chains"
+  ],
   "prettier": {
     "semi": true,
     "trailingComma": "all",
