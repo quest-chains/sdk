@@ -2,6 +2,3 @@
 /* tslint:disable */
 /* eslint-disable */
 export { IERC20Token__factory } from './IERC20Token__factory';
-export { IQuestChain__factory } from './IQuestChain__factory';
-export { IQuestChainFactory__factory } from './IQuestChainFactory__factory';
-export { IQuestChainToken__factory } from './IQuestChainToken__factory';

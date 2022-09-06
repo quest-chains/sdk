@@ -2,6 +2,3 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { IERC20Token } from './IERC20Token';
-export type { IQuestChain } from './IQuestChain';
-export type { IQuestChainFactory } from './IQuestChainFactory';
-export type { IQuestChainToken } from './IQuestChainToken';
