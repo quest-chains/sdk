@@ -5,19 +5,16 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist/**/*"],
   "engines": {
     "node": ">=14"
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "rm -rf dist && yarn tsc",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
     "prepare": "yarn generate",
     "prepublishOnly": "yarn build",
     "format": "prettier --ignore-path .gitignore --write \"{*,**/*}.{ts,tsx,js,jsx,json,yml,yaml,md,css,scss,sol}\"",
@@ -37,10 +34,7 @@
     "url": "https://github.com/quest-chains/sdk/issues"
   },
   "homepage": "https://github.com/quest-chains/sdk#readme",
-  "keywords": [
-    "ethereum",
-    "quest-chains"
-  ],
+  "keywords": ["ethereum", "quest-chains"],
   "prettier": {
     "semi": true,
     "trailingComma": "all",
