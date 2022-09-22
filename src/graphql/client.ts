@@ -16,9 +16,9 @@ export const SUPPORTED_NETWORK_INFO: NetworkInfo = {
     chainId: '0x64',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-xdai',
   },
-  '0x4': {
-    chainId: '0x4',
-    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-rinkeby',
+  '0x5': {
+    chainId: '0x5',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-goerli',
   },
   '0x13881': {
     chainId: '0x13881',
