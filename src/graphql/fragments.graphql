@@ -78,12 +78,14 @@ fragment QuestStatusInfo on QuestStatus {
   submissions {
     timestamp
     description
+    imageUrl
     externalUrl
   }
   reviews {
     accepted
     timestamp
     description
+    imageUrl
     externalUrl
     reviewer {
       id
