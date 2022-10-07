@@ -1,5 +1,6 @@
 import axios, { AxiosError, AxiosProgressEvent } from 'axios';
-import FormData, { EventEmitter } from 'form-data';
+import FormData from 'form-data';
+import EventEmitter from 'events';
 
 import { Metadata as MetadataType, validateSchema } from './validate';
 
