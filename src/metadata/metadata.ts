@@ -28,7 +28,8 @@ export class MetadataUploader extends EventEmitter {
     this.apiUrl = apiUrl;
   }
 
-  uploadMetadata = async (metadata: MetadataType, { label, apiUrl }: UploadOptions): Promise<string> => {
+  uploadMetadata = async (metadata: MetadataType, options?: UploadOptions): Promise<string> => {
+    const { label, apiUrl } = options || {};
     const valid = validateSchema(metadata);
     if (!valid) throw new Error('Invalid Metadata Schema');
 
@@ -50,7 +51,8 @@ export class MetadataUploader extends EventEmitter {
     }
   };
 
-  uploadFiles = async (files: File[], { label, apiUrl }: UploadOptions): Promise<string> => {
+  uploadFiles = async (files: File[], options?: UploadOptions): Promise<string> => {
+    const { label, apiUrl } = options || {};
     const formData = new FormData();
     for (let i = 0; i < files.length; ++i) {
       formData.append(files[i].name, files[i]);
