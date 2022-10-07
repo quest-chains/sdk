@@ -18,5 +18,4 @@ export type Metadata = {
   }[];
 };
 
-export const validateSchema = (metadata: Metadata): boolean =>
-  validate(metadata);
+export const validateSchema = (metadata: Metadata): boolean => validate(metadata);
