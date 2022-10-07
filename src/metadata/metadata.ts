@@ -21,7 +21,14 @@ interface UploadOptions {
 }
 
 export class MetadataUploader extends EventEmitter {
-  uploadMetadata = async (metadata: MetadataType, { label, apiUrl = API_URL }: UploadOptions): Promise<string> => {
+  private apiUrl: string;
+
+  constructor(apiUrl = API_URL) {
+    super();
+    this.apiUrl = apiUrl;
+  }
+
+  uploadMetadata = async (metadata: MetadataType, { label, apiUrl }: UploadOptions): Promise<string> => {
     const valid = validateSchema(metadata);
     if (!valid) throw new Error('Invalid Metadata Schema');
 
@@ -36,14 +43,14 @@ export class MetadataUploader extends EventEmitter {
     };
 
     try {
-      const res = await axios.post(`${apiUrl}/upload/json`, metadata, config);
+      const res = await axios.post(`${apiUrl ?? this.apiUrl}/upload/json`, metadata, config);
       return res.data.response;
     } catch (error) {
       throw new Error(((error as AxiosError).response?.data as HttpResponse).error);
     }
   };
 
-  uploadFiles = async (files: File[], { label, apiUrl = API_URL }: UploadOptions): Promise<string> => {
+  uploadFiles = async (files: File[], { label, apiUrl }: UploadOptions): Promise<string> => {
     const formData = new FormData();
     for (let i = 0; i < files.length; ++i) {
       formData.append(files[i].name, files[i]);
@@ -60,7 +67,7 @@ export class MetadataUploader extends EventEmitter {
     };
 
     try {
-      const res = await axios.post(`${apiUrl}/upload/files`, formData, config);
+      const res = await axios.post(`${apiUrl ?? this.apiUrl}/upload/files`, formData, config);
       return res.data.response;
     } catch (error) {
       throw new Error(((error as AxiosError).response?.data as HttpResponse).error);
