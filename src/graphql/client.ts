@@ -3,6 +3,7 @@ import { Client, createClient, dedupExchange, fetchExchange } from 'urql';
 export type NetworkInfo = {
   [chainId: string]: {
     chainId: string;
+    subgraphName: string;
     subgraphUrl: string;
   };
 };
@@ -10,18 +11,22 @@ export type NetworkInfo = {
 export const SUPPORTED_NETWORK_INFO: NetworkInfo = {
   '0x89': {
     chainId: '0x89',
+    subgraphName: 'dan13ram/quest-chains-polygon',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-polygon',
   },
   '0x64': {
     chainId: '0x64',
+    subgraphName: 'dan13ram/quest-chains-xdai',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-xdai',
   },
   '0x5': {
     chainId: '0x5',
+    subgraphName: 'dan13ram/quest-chains-goerli',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-goerli',
   },
   '0x13881': {
     chainId: '0x13881',
+    subgraphName: 'dan13ram/quest-chains-mumbai',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-mumbai',
   },
 };

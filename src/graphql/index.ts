@@ -7,3 +7,4 @@ export * from './statusForUser';
 export * from './rolesForUser';
 export * from './types';
 export * from './client';
+export * from './health';
