@@ -49,7 +49,7 @@ class SubgraphHealthStore {
   }
 }
 
-const HealthStoreSingleton = (function () {
+const HealthStoreSingleton = (function() {
   let instance: SubgraphHealthStore;
 
   function createInstance() {
@@ -57,7 +57,7 @@ const HealthStoreSingleton = (function () {
   }
 
   return {
-    getInstance: function () {
+    getInstance: function() {
       if (!instance) {
         instance = createInstance();
       }
@@ -70,6 +70,8 @@ const getSubgraphStatus = () => HealthStoreSingleton.getInstance().status();
 
 const initSubgraphHealthStore = getSubgraphStatus;
 
-initSubgraphHealthStore();
+if (typeof window !== 'undefined') {
+  initSubgraphHealthStore();
+}
 
 export const getSubgraphLatestBlock = (chainId: string): number => getSubgraphStatus()[chainId];
