@@ -49,7 +49,7 @@ class SubgraphHealthStore {
   }
 }
 
-const HealthStoreSingleton = (function() {
+const HealthStoreSingleton = (function () {
   let instance: SubgraphHealthStore;
 
   function createInstance() {
@@ -57,7 +57,7 @@ const HealthStoreSingleton = (function() {
   }
 
   return {
-    getInstance: function() {
+    getInstance: function () {
       if (!instance) {
         instance = createInstance();
       }
