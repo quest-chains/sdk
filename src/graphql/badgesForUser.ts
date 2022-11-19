@@ -6,6 +6,9 @@ export type UserBadges = {
     name?: string | null | undefined;
     description?: string | null | undefined;
     imageUrl?: string | null | undefined;
+    questChain?: {
+      address: string | null | undefined;
+    }
   }[];
   chainId: string;
 };
