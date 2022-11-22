@@ -15,7 +15,7 @@
     "start": "tsdx watch",
     "build": "rm -rf dist && yarn tsc",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src --fix",
     "typecheck": "tsc --noEmit",
     "prepare": "yarn generate",
     "prepublishOnly": "yarn build",
