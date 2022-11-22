@@ -8,7 +8,7 @@ export type UserBadges = {
     imageUrl?: string | null | undefined;
     questChain?: {
       address: string | null | undefined;
-    }
+    };
   }[];
   chainId: string;
 };
