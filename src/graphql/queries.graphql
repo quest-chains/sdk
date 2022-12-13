@@ -11,12 +11,7 @@ query QuestChainsInfo($limit: Int) {
 }
 
 query CreatedQuestChainsInfo($limit: Int, $user: String) {
-  questChains(
-    first: $limit
-    where: { createdBy: $user }
-    orderBy: createdAt
-    orderDirection: desc
-  ) {
+  questChains(first: $limit, where: { createdBy: $user }, orderBy: createdAt, orderDirection: desc) {
     ...QuestChainInfo
   }
 }
@@ -44,13 +39,8 @@ query QuestChainSearch($search: String, $limit: Int) {
   }
 }
 
-query QuestChainSearch($search: String, $limit: Int) {
-  questChains(
-    first: $limit
-    where: { search_contains: $search, paused: false }
-    orderBy: createdAt
-    orderDirection: desc
-  ) {
+query QuestChainSearchBySlug($slug: String) {
+  questChains(where: { slug: $slug }) {
     ...QuestChainInfo
   }
 }
