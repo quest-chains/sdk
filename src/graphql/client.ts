@@ -26,8 +26,8 @@ export const SUPPORTED_NETWORK_INFO: NetworkInfo = {
   },
   '0x13881': {
     chainId: '0x13881',
-    subgraphName: 'dan13ram/quest-chains-mumbai',
-    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/dan13ram/quest-chains-mumbai',
+    subgraphName: 'quest-chains/quest-chains-mumbai',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-mumbai',
   },
 };
 
