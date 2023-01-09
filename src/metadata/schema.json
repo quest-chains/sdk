@@ -38,6 +38,14 @@
       "default": "",
       "examples": ["ipfs://QmZTzK8YAsPcLoKENzWmXv519pDmX1XgNQ6h9RtnSjwksn"]
     },
+    "slug": {
+      "$id": "#/properties/slug",
+      "type": "string",
+      "title": "The slug schema",
+      "description": "This property defines an optional slug for the item",
+      "default": "",
+      "examples": ["path-of-the-engaged"]
+    },
     "animation_url": {
       "$id": "#/properties/animation_url",
       "type": "string",

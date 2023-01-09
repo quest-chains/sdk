@@ -10,6 +10,9 @@ import {
   QuestChainInfoFragment,
   QuestChainInfoQuery,
   QuestChainInfoQueryVariables,
+  QuestChainSearchBySlugDocument,
+  QuestChainSearchBySlugQuery,
+  QuestChainSearchBySlugQueryVariables,
   QuestChainSearchDocument,
   QuestChainSearchQuery,
   QuestChainSearchQueryVariables,
@@ -50,6 +53,21 @@ export const getQuestChainsFromSearch = async (chainId: string, search: string):
     .query<QuestChainSearchQuery, QuestChainSearchQueryVariables>(QuestChainSearchDocument, {
       search: search.toLowerCase(),
       limit: 1000,
+    })
+    .toPromise();
+  if (!data) {
+    if (error) {
+      throw error;
+    }
+    return [];
+  }
+  return data.questChains;
+};
+
+export const getQuestChainsFromSlug = async (chainId: string, slug: string): Promise<QuestChainInfoFragment[]> => {
+  const { data, error } = await getClient(chainId)
+    .query<QuestChainSearchBySlugQuery, QuestChainSearchBySlugQueryVariables>(QuestChainSearchBySlugDocument, {
+      slug: slug.toLowerCase(),
     })
     .toPromise();
   if (!data) {
