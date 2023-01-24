@@ -35,6 +35,8 @@ fragment QuestChainInfo on QuestChain {
   quests {
     questId
     paused
+    optional
+    skipReview
     name
     description
   }
