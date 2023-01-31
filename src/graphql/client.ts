@@ -9,25 +9,35 @@ export type NetworkInfo = {
 };
 
 export const SUPPORTED_NETWORK_INFO: NetworkInfo = {
-  '0x89': {
-    chainId: '0x89',
-    subgraphName: 'quest-chains/quest-chains-polygon',
-    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-polygon',
-  },
-  '0x64': {
-    chainId: '0x64',
-    subgraphName: 'quest-chains/quest-chains-xdai',
-    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-xdai',
-  },
   '0x5': {
     chainId: '0x5',
     subgraphName: 'quest-chains/quest-chains-goerli',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-goerli',
   },
+  '0x64': {
+    chainId: '0x64',
+    subgraphName: 'quest-chains/quest-chains-gnosis',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-gnosis',
+  },
+  '0x89': {
+    chainId: '0x89',
+    subgraphName: 'quest-chains/quest-chains-polygon',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-polygon',
+  },
   '0x13881': {
     chainId: '0x13881',
     subgraphName: 'quest-chains/quest-chains-mumbai',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-mumbai',
+  },
+  '0xa4b1': {
+    chainId: '0xa4b1',
+    subgraphName: 'quest-chains/quest-chains-arbitrum',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-arbitrum',
+  },
+  '0x66eed': {
+    chainId: '0x66eed',
+    subgraphName: 'quest-chains/quest-chains-arbitrum-goerli',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-arbitrum-goerli',
   },
 };
 
