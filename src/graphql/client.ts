@@ -14,6 +14,11 @@ export const SUPPORTED_NETWORK_INFO: NetworkInfo = {
     subgraphName: 'quest-chains/quest-chains-goerli',
     subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-goerli',
   },
+  '0xa': {
+    chainId: '0xa',
+    subgraphName: 'quest-chains/quest-chains-optimism',
+    subgraphUrl: 'https://api.thegraph.com/subgraphs/name/quest-chains/quest-chains-optimism',
+  },
   '0x64': {
     chainId: '0x64',
     subgraphName: 'quest-chains/quest-chains-gnosis',
