@@ -15,6 +15,16 @@ fragment GlobalInfo on Global {
   }
 }
 
+fragment QuestInfo on Quest {
+  id
+  questId
+  paused
+  optional
+  skipReview
+  name
+  description
+}
+
 fragment QuestChainInfo on QuestChain {
   address: id
   version
@@ -33,12 +43,7 @@ fragment QuestChainInfo on QuestChain {
   imageUrl
   slug
   quests {
-    questId
-    paused
-    optional
-    skipReview
-    name
-    description
+    ...QuestInfo
   }
   owners {
     address: id
@@ -72,10 +77,7 @@ fragment QuestStatusInfo on QuestStatus {
     ...QuestChainInfo
   }
   quest {
-    questId
-    paused
-    name
-    description
+    ...QuestInfo
   }
   user {
     id

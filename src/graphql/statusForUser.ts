@@ -1,7 +1,9 @@
 import { getClient } from './client';
 import {
+  QuestInfoFragment,
   QuestChainInfoFragment,
   QuestStatusInfoFragment,
+  Status,
   StatusForUserDocument,
   StatusForUserQuery,
   StatusForUserQueryVariables,
@@ -12,6 +14,7 @@ export type UserStatus = {
   updatedAt: Date;
   completed: number;
   total: number;
+  questStatuses: { quest: QuestInfoFragment; status: Status }[];
 };
 
 export const getStatusForUser = async (chainId: string, address: string): Promise<UserStatus[]> => {
@@ -41,6 +44,9 @@ export const getStatusForUser = async (chainId: string, address: string): Promis
       const total = chain.quests.filter(q => !q.paused).length;
       const completed = value.filter(a => !a.quest.paused).reduce((t, a) => t + (a.status === 'pass' ? 1 : 0), 0);
       const updatedAt = value.filter(a => !a.quest.paused).reduce((t, a) => (t > a.updatedAt ? t : a.updatedAt), '0');
-      return { chain, completed, total, updatedAt: new Date(updatedAt) };
+      const questStatuses = value
+        .map(v => ({ quest: v.quest, status: v.status }))
+        .sort((a, b) => Number(a.quest.questId) - Number(b.quest.questId));
+      return { chain, completed, total, updatedAt: new Date(updatedAt), questStatuses };
     });
 };
