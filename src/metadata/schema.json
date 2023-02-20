@@ -62,6 +62,22 @@
       "default": "",
       "examples": ["ipfs://QmZTzK8YAsPcLoKENzWmXv519pDmX1XgNQ6h9RtnSjwksn"]
     },
+    "categories": {
+      "$id": "#/properties/categories",
+      "type": "array",
+      "title": "Categories",
+      "description": "This property defines an optional list of categories that the item may belong to",
+      "default": [],
+      "examples": [["NFT"]],
+      "items": {
+        "$id": "#/properties/categories/items",
+        "type": "string",
+        "title": "Category Item",
+        "description": "One of the categories",
+        "default": "",
+        "examples": ["NFT"]
+      }
+    },
     "attributes": {
       "$id": "#/properties/attributes",
       "type": "array",

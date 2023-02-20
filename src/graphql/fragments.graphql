@@ -42,6 +42,7 @@ fragment QuestChainInfo on QuestChain {
   description
   imageUrl
   slug
+  categories
   quests {
     ...QuestInfo
   }

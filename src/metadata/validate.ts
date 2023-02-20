@@ -12,6 +12,7 @@ export type Metadata = {
   animation_url?: string;
   external_url?: string;
   slug?: string;
+  categories?: string[];
   attributes?: {
     trait_type?: string;
     value: string | number;
