@@ -12,20 +12,10 @@ import type {
   PopulatedTransaction,
   Signer,
   utils,
-} from "ethers";
-import type {
-  FunctionFragment,
-  Result,
-  EventFragment,
-} from "@ethersproject/abi";
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
-  OnEvent,
-  PromiseOrValue,
-} from "../common";
+} from 'ethers';
+import type { FunctionFragment, Result, EventFragment } from '@ethersproject/abi';
+import type { Listener, Provider } from '@ethersproject/providers';
+import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent, PromiseOrValue } from '../common';
 
 export declare namespace IQuestChain {
   export type QuestDetailsStruct = {
@@ -61,7 +51,7 @@ export declare namespace QuestChainCommons {
     string[],
     boolean,
     string,
-    string
+    string,
   ] & {
     owners: string[];
     admins: string[];
@@ -76,323 +66,212 @@ export declare namespace QuestChainCommons {
 
 export interface QuestChainInterface extends utils.Interface {
   functions: {
-    "ADMIN_ROLE()": FunctionFragment;
-    "DEFAULT_ADMIN_ROLE()": FunctionFragment;
-    "EDITOR_ROLE()": FunctionFragment;
-    "REVIEWER_ROLE()": FunctionFragment;
-    "burnToken()": FunctionFragment;
-    "configureQuests(uint256[],(bool,bool,bool)[])": FunctionFragment;
-    "createQuests(string[])": FunctionFragment;
-    "edit(string)": FunctionFragment;
-    "editQuests(uint256[],string[])": FunctionFragment;
-    "getRoleAdmin(bytes32)": FunctionFragment;
-    "getTokenURI()": FunctionFragment;
-    "grantRole(bytes32,address)": FunctionFragment;
-    "hasRole(bytes32,address)": FunctionFragment;
-    "init((address[],address[],address[],address[],string[],bool,string,string))": FunctionFragment;
-    "limiterContract()": FunctionFragment;
-    "mintToken()": FunctionFragment;
-    "pause()": FunctionFragment;
-    "paused()": FunctionFragment;
-    "premium()": FunctionFragment;
-    "questChainFactory()": FunctionFragment;
-    "questChainId()": FunctionFragment;
-    "questChainToken()": FunctionFragment;
-    "questCount()": FunctionFragment;
-    "questDetails(uint256)": FunctionFragment;
-    "questStatus(address,uint256)": FunctionFragment;
-    "renounceRole(bytes32,address)": FunctionFragment;
-    "reviewProofs(address[],uint256[],bool[],string[])": FunctionFragment;
-    "revokeRole(bytes32,address)": FunctionFragment;
-    "setLimiter(address)": FunctionFragment;
-    "setTokenURI(string)": FunctionFragment;
-    "submitProofs(uint256[],string[])": FunctionFragment;
-    "supportsInterface(bytes4)": FunctionFragment;
-    "unpause()": FunctionFragment;
-    "upgrade()": FunctionFragment;
+    'ADMIN_ROLE()': FunctionFragment;
+    'DEFAULT_ADMIN_ROLE()': FunctionFragment;
+    'EDITOR_ROLE()': FunctionFragment;
+    'REVIEWER_ROLE()': FunctionFragment;
+    'burnToken()': FunctionFragment;
+    'configureQuests(uint256[],(bool,bool,bool)[])': FunctionFragment;
+    'createQuests(string[])': FunctionFragment;
+    'edit(string)': FunctionFragment;
+    'editQuests(uint256[],string[])': FunctionFragment;
+    'getRoleAdmin(bytes32)': FunctionFragment;
+    'getTokenURI()': FunctionFragment;
+    'grantRole(bytes32,address)': FunctionFragment;
+    'hasRole(bytes32,address)': FunctionFragment;
+    'init((address[],address[],address[],address[],string[],bool,string,string))': FunctionFragment;
+    'limiterContract()': FunctionFragment;
+    'mintToken()': FunctionFragment;
+    'pause()': FunctionFragment;
+    'paused()': FunctionFragment;
+    'premium()': FunctionFragment;
+    'questChainFactory()': FunctionFragment;
+    'questChainId()': FunctionFragment;
+    'questChainToken()': FunctionFragment;
+    'questCount()': FunctionFragment;
+    'questDetails(uint256)': FunctionFragment;
+    'questStatus(address,uint256)': FunctionFragment;
+    'renounceRole(bytes32,address)': FunctionFragment;
+    'reviewProofs(address[],uint256[],bool[],string[])': FunctionFragment;
+    'revokeRole(bytes32,address)': FunctionFragment;
+    'setLimiter(address)': FunctionFragment;
+    'setTokenURI(string)': FunctionFragment;
+    'submitProofs(uint256[],string[])': FunctionFragment;
+    'supportsInterface(bytes4)': FunctionFragment;
+    'unpause()': FunctionFragment;
+    'upgrade()': FunctionFragment;
   };
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "ADMIN_ROLE"
-      | "DEFAULT_ADMIN_ROLE"
-      | "EDITOR_ROLE"
-      | "REVIEWER_ROLE"
-      | "burnToken"
-      | "configureQuests"
-      | "createQuests"
-      | "edit"
-      | "editQuests"
-      | "getRoleAdmin"
-      | "getTokenURI"
-      | "grantRole"
-      | "hasRole"
-      | "init"
-      | "limiterContract"
-      | "mintToken"
-      | "pause"
-      | "paused"
-      | "premium"
-      | "questChainFactory"
-      | "questChainId"
-      | "questChainToken"
-      | "questCount"
-      | "questDetails"
-      | "questStatus"
-      | "renounceRole"
-      | "reviewProofs"
-      | "revokeRole"
-      | "setLimiter"
-      | "setTokenURI"
-      | "submitProofs"
-      | "supportsInterface"
-      | "unpause"
-      | "upgrade"
+      | 'ADMIN_ROLE'
+      | 'DEFAULT_ADMIN_ROLE'
+      | 'EDITOR_ROLE'
+      | 'REVIEWER_ROLE'
+      | 'burnToken'
+      | 'configureQuests'
+      | 'createQuests'
+      | 'edit'
+      | 'editQuests'
+      | 'getRoleAdmin'
+      | 'getTokenURI'
+      | 'grantRole'
+      | 'hasRole'
+      | 'init'
+      | 'limiterContract'
+      | 'mintToken'
+      | 'pause'
+      | 'paused'
+      | 'premium'
+      | 'questChainFactory'
+      | 'questChainId'
+      | 'questChainToken'
+      | 'questCount'
+      | 'questDetails'
+      | 'questStatus'
+      | 'renounceRole'
+      | 'reviewProofs'
+      | 'revokeRole'
+      | 'setLimiter'
+      | 'setTokenURI'
+      | 'submitProofs'
+      | 'supportsInterface'
+      | 'unpause'
+      | 'upgrade',
   ): FunctionFragment;
 
+  encodeFunctionData(functionFragment: 'ADMIN_ROLE', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'DEFAULT_ADMIN_ROLE', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'EDITOR_ROLE', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'REVIEWER_ROLE', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'burnToken', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "ADMIN_ROLE",
-    values?: undefined
+    functionFragment: 'configureQuests',
+    values: [PromiseOrValue<BigNumberish>[], IQuestChain.QuestDetailsStruct[]],
+  ): string;
+  encodeFunctionData(functionFragment: 'createQuests', values: [PromiseOrValue<string>[]]): string;
+  encodeFunctionData(functionFragment: 'edit', values: [PromiseOrValue<string>]): string;
+  encodeFunctionData(
+    functionFragment: 'editQuests',
+    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<string>[]],
+  ): string;
+  encodeFunctionData(functionFragment: 'getRoleAdmin', values: [PromiseOrValue<BytesLike>]): string;
+  encodeFunctionData(functionFragment: 'getTokenURI', values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'grantRole',
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
+  ): string;
+  encodeFunctionData(functionFragment: 'hasRole', values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]): string;
+  encodeFunctionData(functionFragment: 'init', values: [QuestChainCommons.QuestChainInfoStruct]): string;
+  encodeFunctionData(functionFragment: 'limiterContract', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'mintToken', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pause', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'paused', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'premium', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'questChainFactory', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'questChainId', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'questChainToken', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'questCount', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'questDetails', values: [PromiseOrValue<BigNumberish>]): string;
+  encodeFunctionData(
+    functionFragment: 'questStatus',
+    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
-    functionFragment: "DEFAULT_ADMIN_ROLE",
-    values?: undefined
+    functionFragment: 'renounceRole',
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
-    functionFragment: "EDITOR_ROLE",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "REVIEWER_ROLE",
-    values?: undefined
-  ): string;
-  encodeFunctionData(functionFragment: "burnToken", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "configureQuests",
-    values: [PromiseOrValue<BigNumberish>[], IQuestChain.QuestDetailsStruct[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "createQuests",
-    values: [PromiseOrValue<string>[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "edit",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "editQuests",
-    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<string>[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getRoleAdmin",
-    values: [PromiseOrValue<BytesLike>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getTokenURI",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "grantRole",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "hasRole",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "init",
-    values: [QuestChainCommons.QuestChainInfoStruct]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "limiterContract",
-    values?: undefined
-  ): string;
-  encodeFunctionData(functionFragment: "mintToken", values?: undefined): string;
-  encodeFunctionData(functionFragment: "pause", values?: undefined): string;
-  encodeFunctionData(functionFragment: "paused", values?: undefined): string;
-  encodeFunctionData(functionFragment: "premium", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "questChainFactory",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "questChainId",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "questChainToken",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "questCount",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "questDetails",
-    values: [PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "questStatus",
-    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "renounceRole",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "reviewProofs",
+    functionFragment: 'reviewProofs',
     values: [
       PromiseOrValue<string>[],
       PromiseOrValue<BigNumberish>[],
       PromiseOrValue<boolean>[],
-      PromiseOrValue<string>[]
-    ]
+      PromiseOrValue<string>[],
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "revokeRole",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
+    functionFragment: 'revokeRole',
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
+  encodeFunctionData(functionFragment: 'setLimiter', values: [PromiseOrValue<string>]): string;
+  encodeFunctionData(functionFragment: 'setTokenURI', values: [PromiseOrValue<string>]): string;
   encodeFunctionData(
-    functionFragment: "setLimiter",
-    values: [PromiseOrValue<string>]
+    functionFragment: 'submitProofs',
+    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<string>[]],
   ): string;
-  encodeFunctionData(
-    functionFragment: "setTokenURI",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "submitProofs",
-    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<string>[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "supportsInterface",
-    values: [PromiseOrValue<BytesLike>]
-  ): string;
-  encodeFunctionData(functionFragment: "unpause", values?: undefined): string;
-  encodeFunctionData(functionFragment: "upgrade", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'supportsInterface', values: [PromiseOrValue<BytesLike>]): string;
+  encodeFunctionData(functionFragment: 'unpause', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'upgrade', values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "ADMIN_ROLE", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "DEFAULT_ADMIN_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "EDITOR_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "REVIEWER_ROLE",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "burnToken", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "configureQuests",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "createQuests",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "edit", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "editQuests", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "getRoleAdmin",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getTokenURI",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "grantRole", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "hasRole", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "init", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "limiterContract",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "mintToken", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "paused", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "premium", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "questChainFactory",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "questChainId",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "questChainToken",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "questCount", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "questDetails",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "questStatus",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "renounceRole",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "reviewProofs",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "revokeRole", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "setLimiter", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "setTokenURI",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "submitProofs",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "supportsInterface",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "unpause", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "upgrade", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ADMIN_ROLE', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'DEFAULT_ADMIN_ROLE', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'EDITOR_ROLE', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'REVIEWER_ROLE', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'burnToken', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'configureQuests', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'createQuests', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'edit', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'editQuests', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getRoleAdmin', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getTokenURI', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'grantRole', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'hasRole', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'init', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'limiterContract', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mintToken', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pause', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'paused', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'premium', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'questChainFactory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'questChainId', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'questChainToken', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'questCount', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'questDetails', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'questStatus', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'renounceRole', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'reviewProofs', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'revokeRole', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setLimiter', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setTokenURI', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'submitProofs', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'supportsInterface', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'unpause', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'upgrade', data: BytesLike): Result;
 
   events: {
-    "ConfiguredQuests(address,uint256[],tuple[])": EventFragment;
-    "Initialized(uint8)": EventFragment;
-    "Paused(address)": EventFragment;
-    "QuestChainEdited(address,string)": EventFragment;
-    "QuestChainInit(string,string[],bool)": EventFragment;
-    "QuestChainTokenURIUpdated(string)": EventFragment;
-    "QuestProofsReviewed(address,address[],uint256[],bool[],string[])": EventFragment;
-    "QuestProofsSubmitted(address,uint256[],string[])": EventFragment;
-    "QuestsCreated(address,string[])": EventFragment;
-    "QuestsEdited(address,uint256[],string[])": EventFragment;
-    "RoleAdminChanged(bytes32,bytes32,bytes32)": EventFragment;
-    "RoleGranted(bytes32,address,address)": EventFragment;
-    "RoleRevoked(bytes32,address,address)": EventFragment;
-    "SetLimiter(address)": EventFragment;
-    "Unpaused(address)": EventFragment;
+    'ConfiguredQuests(address,uint256[],tuple[])': EventFragment;
+    'Initialized(uint8)': EventFragment;
+    'Paused(address)': EventFragment;
+    'QuestChainEdited(address,string)': EventFragment;
+    'QuestChainInit(string,string[],bool)': EventFragment;
+    'QuestChainTokenURIUpdated(string)': EventFragment;
+    'QuestProofsReviewed(address,address[],uint256[],bool[],string[])': EventFragment;
+    'QuestProofsSubmitted(address,uint256[],string[])': EventFragment;
+    'QuestsCreated(address,string[])': EventFragment;
+    'QuestsEdited(address,uint256[],string[])': EventFragment;
+    'RoleAdminChanged(bytes32,bytes32,bytes32)': EventFragment;
+    'RoleGranted(bytes32,address,address)': EventFragment;
+    'RoleRevoked(bytes32,address,address)': EventFragment;
+    'SetLimiter(address)': EventFragment;
+    'Unpaused(address)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "ConfiguredQuests"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Paused"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestChainEdited"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestChainInit"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestChainTokenURIUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestProofsReviewed"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestProofsSubmitted"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestsCreated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "QuestsEdited"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "RoleAdminChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "RoleGranted"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "RoleRevoked"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "SetLimiter"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Unpaused"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ConfiguredQuests'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Initialized'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Paused'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestChainEdited'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestChainInit'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestChainTokenURIUpdated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestProofsReviewed'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestProofsSubmitted'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestsCreated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'QuestsEdited'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'RoleAdminChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'RoleGranted'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'RoleRevoked'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'SetLimiter'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Unpaused'): EventFragment;
 }
 
 export interface ConfiguredQuestsEventObject {
@@ -405,8 +284,7 @@ export type ConfiguredQuestsEvent = TypedEvent<
   ConfiguredQuestsEventObject
 >;
 
-export type ConfiguredQuestsEventFilter =
-  TypedEventFilter<ConfiguredQuestsEvent>;
+export type ConfiguredQuestsEventFilter = TypedEventFilter<ConfiguredQuestsEvent>;
 
 export interface InitializedEventObject {
   version: number;
@@ -426,36 +304,25 @@ export interface QuestChainEditedEventObject {
   editor: string;
   details: string;
 }
-export type QuestChainEditedEvent = TypedEvent<
-  [string, string],
-  QuestChainEditedEventObject
->;
+export type QuestChainEditedEvent = TypedEvent<[string, string], QuestChainEditedEventObject>;
 
-export type QuestChainEditedEventFilter =
-  TypedEventFilter<QuestChainEditedEvent>;
+export type QuestChainEditedEventFilter = TypedEventFilter<QuestChainEditedEvent>;
 
 export interface QuestChainInitEventObject {
   details: string;
   quests: string[];
   paused: boolean;
 }
-export type QuestChainInitEvent = TypedEvent<
-  [string, string[], boolean],
-  QuestChainInitEventObject
->;
+export type QuestChainInitEvent = TypedEvent<[string, string[], boolean], QuestChainInitEventObject>;
 
 export type QuestChainInitEventFilter = TypedEventFilter<QuestChainInitEvent>;
 
 export interface QuestChainTokenURIUpdatedEventObject {
   tokenURI: string;
 }
-export type QuestChainTokenURIUpdatedEvent = TypedEvent<
-  [string],
-  QuestChainTokenURIUpdatedEventObject
->;
+export type QuestChainTokenURIUpdatedEvent = TypedEvent<[string], QuestChainTokenURIUpdatedEventObject>;
 
-export type QuestChainTokenURIUpdatedEventFilter =
-  TypedEventFilter<QuestChainTokenURIUpdatedEvent>;
+export type QuestChainTokenURIUpdatedEventFilter = TypedEventFilter<QuestChainTokenURIUpdatedEvent>;
 
 export interface QuestProofsReviewedEventObject {
   reviewer: string;
@@ -469,30 +336,22 @@ export type QuestProofsReviewedEvent = TypedEvent<
   QuestProofsReviewedEventObject
 >;
 
-export type QuestProofsReviewedEventFilter =
-  TypedEventFilter<QuestProofsReviewedEvent>;
+export type QuestProofsReviewedEventFilter = TypedEventFilter<QuestProofsReviewedEvent>;
 
 export interface QuestProofsSubmittedEventObject {
   quester: string;
   questIdList: BigNumber[];
   proofList: string[];
 }
-export type QuestProofsSubmittedEvent = TypedEvent<
-  [string, BigNumber[], string[]],
-  QuestProofsSubmittedEventObject
->;
+export type QuestProofsSubmittedEvent = TypedEvent<[string, BigNumber[], string[]], QuestProofsSubmittedEventObject>;
 
-export type QuestProofsSubmittedEventFilter =
-  TypedEventFilter<QuestProofsSubmittedEvent>;
+export type QuestProofsSubmittedEventFilter = TypedEventFilter<QuestProofsSubmittedEvent>;
 
 export interface QuestsCreatedEventObject {
   creator: string;
   detailsList: string[];
 }
-export type QuestsCreatedEvent = TypedEvent<
-  [string, string[]],
-  QuestsCreatedEventObject
->;
+export type QuestsCreatedEvent = TypedEvent<[string, string[]], QuestsCreatedEventObject>;
 
 export type QuestsCreatedEventFilter = TypedEventFilter<QuestsCreatedEvent>;
 
@@ -501,10 +360,7 @@ export interface QuestsEditedEventObject {
   questIdList: BigNumber[];
   detailsList: string[];
 }
-export type QuestsEditedEvent = TypedEvent<
-  [string, BigNumber[], string[]],
-  QuestsEditedEventObject
->;
+export type QuestsEditedEvent = TypedEvent<[string, BigNumber[], string[]], QuestsEditedEventObject>;
 
 export type QuestsEditedEventFilter = TypedEventFilter<QuestsEditedEvent>;
 
@@ -513,23 +369,16 @@ export interface RoleAdminChangedEventObject {
   previousAdminRole: string;
   newAdminRole: string;
 }
-export type RoleAdminChangedEvent = TypedEvent<
-  [string, string, string],
-  RoleAdminChangedEventObject
->;
+export type RoleAdminChangedEvent = TypedEvent<[string, string, string], RoleAdminChangedEventObject>;
 
-export type RoleAdminChangedEventFilter =
-  TypedEventFilter<RoleAdminChangedEvent>;
+export type RoleAdminChangedEventFilter = TypedEventFilter<RoleAdminChangedEvent>;
 
 export interface RoleGrantedEventObject {
   role: string;
   account: string;
   sender: string;
 }
-export type RoleGrantedEvent = TypedEvent<
-  [string, string, string],
-  RoleGrantedEventObject
->;
+export type RoleGrantedEvent = TypedEvent<[string, string, string], RoleGrantedEventObject>;
 
 export type RoleGrantedEventFilter = TypedEventFilter<RoleGrantedEvent>;
 
@@ -538,10 +387,7 @@ export interface RoleRevokedEventObject {
   account: string;
   sender: string;
 }
-export type RoleRevokedEvent = TypedEvent<
-  [string, string, string],
-  RoleRevokedEventObject
->;
+export type RoleRevokedEvent = TypedEvent<[string, string, string], RoleRevokedEventObject>;
 
 export type RoleRevokedEventFilter = TypedEventFilter<RoleRevokedEvent>;
 
@@ -569,16 +415,12 @@ export interface QuestChain extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TEvent>>;
 
-  listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
-  ): Array<TypedListener<TEvent>>;
+  listeners<TEvent extends TypedEvent>(eventFilter?: TypedEventFilter<TEvent>): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
-  removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
-  ): this;
+  removeAllListeners<TEvent extends TypedEvent>(eventFilter: TypedEventFilter<TEvent>): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
   on: OnEvent<this>;
@@ -594,65 +436,56 @@ export interface QuestChain extends BaseContract {
 
     REVIEWER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    burnToken(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    burnToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
     configureQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _questDetails: IQuestChain.QuestDetailsStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     createQuests(
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     edit(
       _details: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     editQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
-    getRoleAdmin(
-      role: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<[string]>;
+    getRoleAdmin(role: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<[string]>;
 
     getTokenURI(overrides?: CallOverrides): Promise<[string] & { uri: string }>;
 
     grantRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     init(
       _info: QuestChainCommons.QuestChainInfoStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     limiterContract(overrides?: CallOverrides): Promise<[string]>;
 
-    mintToken(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    mintToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
-    pause(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    pause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
     paused(overrides?: CallOverrides): Promise<[boolean]>;
 
@@ -668,7 +501,7 @@ export interface QuestChain extends BaseContract {
 
     questDetails(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [boolean, boolean, boolean] & {
         paused: boolean;
@@ -680,13 +513,13 @@ export interface QuestChain extends BaseContract {
     questStatus(
       _quester: PromiseOrValue<string>,
       _questId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { status: number }>;
 
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     reviewProofs(
@@ -694,43 +527,36 @@ export interface QuestChain extends BaseContract {
       _questIdList: PromiseOrValue<BigNumberish>[],
       _successList: PromiseOrValue<boolean>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     revokeRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     setLimiter(
       _limiterContract: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     setTokenURI(
       _tokenURI: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     submitProofs(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _proofList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
-    supportsInterface(
-      interfaceId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>;
+    supportsInterface(interfaceId: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<[boolean]>;
 
-    unpause(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    unpause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
-    upgrade(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    upgrade(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
   };
 
   ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
@@ -741,65 +567,56 @@ export interface QuestChain extends BaseContract {
 
   REVIEWER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  burnToken(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  burnToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
   configureQuests(
     _questIdList: PromiseOrValue<BigNumberish>[],
     _questDetails: IQuestChain.QuestDetailsStruct[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   createQuests(
     _detailsList: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   edit(
     _details: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   editQuests(
     _questIdList: PromiseOrValue<BigNumberish>[],
     _detailsList: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
-  getRoleAdmin(
-    role: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
-  ): Promise<string>;
+  getRoleAdmin(role: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<string>;
 
   getTokenURI(overrides?: CallOverrides): Promise<string>;
 
   grantRole(
     _role: PromiseOrValue<BytesLike>,
     _account: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   hasRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   init(
     _info: QuestChainCommons.QuestChainInfoStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   limiterContract(overrides?: CallOverrides): Promise<string>;
 
-  mintToken(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  mintToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
-  pause(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  pause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
   paused(overrides?: CallOverrides): Promise<boolean>;
 
@@ -815,7 +632,7 @@ export interface QuestChain extends BaseContract {
 
   questDetails(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [boolean, boolean, boolean] & {
       paused: boolean;
@@ -827,13 +644,13 @@ export interface QuestChain extends BaseContract {
   questStatus(
     _quester: PromiseOrValue<string>,
     _questId: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   renounceRole(
     role: PromiseOrValue<BytesLike>,
     account: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   reviewProofs(
@@ -841,43 +658,36 @@ export interface QuestChain extends BaseContract {
     _questIdList: PromiseOrValue<BigNumberish>[],
     _successList: PromiseOrValue<boolean>[],
     _detailsList: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   revokeRole(
     _role: PromiseOrValue<BytesLike>,
     _account: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   setLimiter(
     _limiterContract: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   setTokenURI(
     _tokenURI: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   submitProofs(
     _questIdList: PromiseOrValue<BigNumberish>[],
     _proofList: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
-  supportsInterface(
-    interfaceId: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
-  ): Promise<boolean>;
+  supportsInterface(interfaceId: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<boolean>;
 
-  unpause(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  unpause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
-  upgrade(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  upgrade(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<ContractTransaction>;
 
   callStatic: {
     ADMIN_ROLE(overrides?: CallOverrides): Promise<string>;
@@ -893,48 +703,36 @@ export interface QuestChain extends BaseContract {
     configureQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _questDetails: IQuestChain.QuestDetailsStruct[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
-    createQuests(
-      _detailsList: PromiseOrValue<string>[],
-      overrides?: CallOverrides
-    ): Promise<void>;
+    createQuests(_detailsList: PromiseOrValue<string>[], overrides?: CallOverrides): Promise<void>;
 
-    edit(
-      _details: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    edit(_details: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>;
 
     editQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
-    getRoleAdmin(
-      role: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<string>;
+    getRoleAdmin(role: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<string>;
 
     getTokenURI(overrides?: CallOverrides): Promise<string>;
 
     grantRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
-    init(
-      _info: QuestChainCommons.QuestChainInfoStruct,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    init(_info: QuestChainCommons.QuestChainInfoStruct, overrides?: CallOverrides): Promise<void>;
 
     limiterContract(overrides?: CallOverrides): Promise<string>;
 
@@ -956,7 +754,7 @@ export interface QuestChain extends BaseContract {
 
     questDetails(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [boolean, boolean, boolean] & {
         paused: boolean;
@@ -968,13 +766,13 @@ export interface QuestChain extends BaseContract {
     questStatus(
       _quester: PromiseOrValue<string>,
       _questId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     reviewProofs(
@@ -982,35 +780,26 @@ export interface QuestChain extends BaseContract {
       _questIdList: PromiseOrValue<BigNumberish>[],
       _successList: PromiseOrValue<boolean>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     revokeRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
-    setLimiter(
-      _limiterContract: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setLimiter(_limiterContract: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>;
 
-    setTokenURI(
-      _tokenURI: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
+    setTokenURI(_tokenURI: PromiseOrValue<string>, overrides?: CallOverrides): Promise<void>;
 
     submitProofs(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _proofList: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
-    supportsInterface(
-      interfaceId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<boolean>;
+    supportsInterface(interfaceId: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<boolean>;
 
     unpause(overrides?: CallOverrides): Promise<void>;
 
@@ -1018,130 +807,97 @@ export interface QuestChain extends BaseContract {
   };
 
   filters: {
-    "ConfiguredQuests(address,uint256[],tuple[])"(
+    'ConfiguredQuests(address,uint256[],tuple[])'(
       editor?: null,
       questIdList?: null,
-      questDetails?: null
+      questDetails?: null,
     ): ConfiguredQuestsEventFilter;
-    ConfiguredQuests(
-      editor?: null,
-      questIdList?: null,
-      questDetails?: null
-    ): ConfiguredQuestsEventFilter;
+    ConfiguredQuests(editor?: null, questIdList?: null, questDetails?: null): ConfiguredQuestsEventFilter;
 
-    "Initialized(uint8)"(version?: null): InitializedEventFilter;
+    'Initialized(uint8)'(version?: null): InitializedEventFilter;
     Initialized(version?: null): InitializedEventFilter;
 
-    "Paused(address)"(account?: null): PausedEventFilter;
+    'Paused(address)'(account?: null): PausedEventFilter;
     Paused(account?: null): PausedEventFilter;
 
-    "QuestChainEdited(address,string)"(
-      editor?: null,
-      details?: null
-    ): QuestChainEditedEventFilter;
-    QuestChainEdited(
-      editor?: null,
-      details?: null
-    ): QuestChainEditedEventFilter;
+    'QuestChainEdited(address,string)'(editor?: null, details?: null): QuestChainEditedEventFilter;
+    QuestChainEdited(editor?: null, details?: null): QuestChainEditedEventFilter;
 
-    "QuestChainInit(string,string[],bool)"(
-      details?: null,
-      quests?: null,
-      paused?: null
-    ): QuestChainInitEventFilter;
-    QuestChainInit(
-      details?: null,
-      quests?: null,
-      paused?: null
-    ): QuestChainInitEventFilter;
+    'QuestChainInit(string,string[],bool)'(details?: null, quests?: null, paused?: null): QuestChainInitEventFilter;
+    QuestChainInit(details?: null, quests?: null, paused?: null): QuestChainInitEventFilter;
 
-    "QuestChainTokenURIUpdated(string)"(
-      tokenURI?: null
-    ): QuestChainTokenURIUpdatedEventFilter;
-    QuestChainTokenURIUpdated(
-      tokenURI?: null
-    ): QuestChainTokenURIUpdatedEventFilter;
+    'QuestChainTokenURIUpdated(string)'(tokenURI?: null): QuestChainTokenURIUpdatedEventFilter;
+    QuestChainTokenURIUpdated(tokenURI?: null): QuestChainTokenURIUpdatedEventFilter;
 
-    "QuestProofsReviewed(address,address[],uint256[],bool[],string[])"(
+    'QuestProofsReviewed(address,address[],uint256[],bool[],string[])'(
       reviewer?: null,
       questerList?: null,
       questIdList?: null,
       successList?: null,
-      detailsList?: null
+      detailsList?: null,
     ): QuestProofsReviewedEventFilter;
     QuestProofsReviewed(
       reviewer?: null,
       questerList?: null,
       questIdList?: null,
       successList?: null,
-      detailsList?: null
+      detailsList?: null,
     ): QuestProofsReviewedEventFilter;
 
-    "QuestProofsSubmitted(address,uint256[],string[])"(
+    'QuestProofsSubmitted(address,uint256[],string[])'(
       quester?: null,
       questIdList?: null,
-      proofList?: null
+      proofList?: null,
     ): QuestProofsSubmittedEventFilter;
-    QuestProofsSubmitted(
-      quester?: null,
-      questIdList?: null,
-      proofList?: null
-    ): QuestProofsSubmittedEventFilter;
+    QuestProofsSubmitted(quester?: null, questIdList?: null, proofList?: null): QuestProofsSubmittedEventFilter;
 
-    "QuestsCreated(address,string[])"(
-      creator?: null,
-      detailsList?: null
-    ): QuestsCreatedEventFilter;
+    'QuestsCreated(address,string[])'(creator?: null, detailsList?: null): QuestsCreatedEventFilter;
     QuestsCreated(creator?: null, detailsList?: null): QuestsCreatedEventFilter;
 
-    "QuestsEdited(address,uint256[],string[])"(
+    'QuestsEdited(address,uint256[],string[])'(
       editor?: null,
       questIdList?: null,
-      detailsList?: null
+      detailsList?: null,
     ): QuestsEditedEventFilter;
-    QuestsEdited(
-      editor?: null,
-      questIdList?: null,
-      detailsList?: null
-    ): QuestsEditedEventFilter;
+    QuestsEdited(editor?: null, questIdList?: null, detailsList?: null): QuestsEditedEventFilter;
 
-    "RoleAdminChanged(bytes32,bytes32,bytes32)"(
+    'RoleAdminChanged(bytes32,bytes32,bytes32)'(
       role?: PromiseOrValue<BytesLike> | null,
       previousAdminRole?: PromiseOrValue<BytesLike> | null,
-      newAdminRole?: PromiseOrValue<BytesLike> | null
+      newAdminRole?: PromiseOrValue<BytesLike> | null,
     ): RoleAdminChangedEventFilter;
     RoleAdminChanged(
       role?: PromiseOrValue<BytesLike> | null,
       previousAdminRole?: PromiseOrValue<BytesLike> | null,
-      newAdminRole?: PromiseOrValue<BytesLike> | null
+      newAdminRole?: PromiseOrValue<BytesLike> | null,
     ): RoleAdminChangedEventFilter;
 
-    "RoleGranted(bytes32,address,address)"(
+    'RoleGranted(bytes32,address,address)'(
       role?: PromiseOrValue<BytesLike> | null,
       account?: PromiseOrValue<string> | null,
-      sender?: PromiseOrValue<string> | null
+      sender?: PromiseOrValue<string> | null,
     ): RoleGrantedEventFilter;
     RoleGranted(
       role?: PromiseOrValue<BytesLike> | null,
       account?: PromiseOrValue<string> | null,
-      sender?: PromiseOrValue<string> | null
+      sender?: PromiseOrValue<string> | null,
     ): RoleGrantedEventFilter;
 
-    "RoleRevoked(bytes32,address,address)"(
+    'RoleRevoked(bytes32,address,address)'(
       role?: PromiseOrValue<BytesLike> | null,
       account?: PromiseOrValue<string> | null,
-      sender?: PromiseOrValue<string> | null
+      sender?: PromiseOrValue<string> | null,
     ): RoleRevokedEventFilter;
     RoleRevoked(
       role?: PromiseOrValue<BytesLike> | null,
       account?: PromiseOrValue<string> | null,
-      sender?: PromiseOrValue<string> | null
+      sender?: PromiseOrValue<string> | null,
     ): RoleRevokedEventFilter;
 
-    "SetLimiter(address)"(limiterContract?: null): SetLimiterEventFilter;
+    'SetLimiter(address)'(limiterContract?: null): SetLimiterEventFilter;
     SetLimiter(limiterContract?: null): SetLimiterEventFilter;
 
-    "Unpaused(address)"(account?: null): UnpausedEventFilter;
+    'Unpaused(address)'(account?: null): UnpausedEventFilter;
     Unpaused(account?: null): UnpausedEventFilter;
   };
 
@@ -1154,65 +910,56 @@ export interface QuestChain extends BaseContract {
 
     REVIEWER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    burnToken(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    burnToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>;
 
     configureQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _questDetails: IQuestChain.QuestDetailsStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     createQuests(
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     edit(
       _details: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     editQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
-    getRoleAdmin(
-      role: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    getRoleAdmin(role: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<BigNumber>;
 
     getTokenURI(overrides?: CallOverrides): Promise<BigNumber>;
 
     grantRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     init(
       _info: QuestChainCommons.QuestChainInfoStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     limiterContract(overrides?: CallOverrides): Promise<BigNumber>;
 
-    mintToken(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    mintToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>;
 
-    pause(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    pause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>;
 
     paused(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -1226,21 +973,18 @@ export interface QuestChain extends BaseContract {
 
     questCount(overrides?: CallOverrides): Promise<BigNumber>;
 
-    questDetails(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    questDetails(arg0: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<BigNumber>;
 
     questStatus(
       _quester: PromiseOrValue<string>,
       _questId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     reviewProofs(
@@ -1248,115 +992,97 @@ export interface QuestChain extends BaseContract {
       _questIdList: PromiseOrValue<BigNumberish>[],
       _successList: PromiseOrValue<boolean>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     revokeRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     setLimiter(
       _limiterContract: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     setTokenURI(
       _tokenURI: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     submitProofs(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _proofList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
-    supportsInterface(
-      interfaceId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    supportsInterface(interfaceId: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<BigNumber>;
 
-    unpause(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    unpause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>;
 
-    upgrade(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    upgrade(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<BigNumber>;
   };
 
   populateTransaction: {
     ADMIN_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    DEFAULT_ADMIN_ROLE(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    DEFAULT_ADMIN_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     EDITOR_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     REVIEWER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    burnToken(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    burnToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>;
 
     configureQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _questDetails: IQuestChain.QuestDetailsStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     createQuests(
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     edit(
       _details: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     editQuests(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
-    getRoleAdmin(
-      role: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    getRoleAdmin(role: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getTokenURI(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     grantRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     hasRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     init(
       _info: QuestChainCommons.QuestChainInfoStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     limiterContract(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    mintToken(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    mintToken(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>;
 
-    pause(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    pause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>;
 
     paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
@@ -1370,21 +1096,18 @@ export interface QuestChain extends BaseContract {
 
     questCount(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    questDetails(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    questDetails(arg0: PromiseOrValue<BigNumberish>, overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     questStatus(
       _quester: PromiseOrValue<string>,
       _questId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     renounceRole(
       role: PromiseOrValue<BytesLike>,
       account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     reviewProofs(
@@ -1392,42 +1115,35 @@ export interface QuestChain extends BaseContract {
       _questIdList: PromiseOrValue<BigNumberish>[],
       _successList: PromiseOrValue<boolean>[],
       _detailsList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     revokeRole(
       _role: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     setLimiter(
       _limiterContract: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     setTokenURI(
       _tokenURI: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     submitProofs(
       _questIdList: PromiseOrValue<BigNumberish>[],
       _proofList: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
-    supportsInterface(
-      interfaceId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    supportsInterface(interfaceId: PromiseOrValue<BytesLike>, overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    unpause(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    unpause(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>;
 
-    upgrade(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    upgrade(overrides?: Overrides & { from?: PromiseOrValue<string> }): Promise<PopulatedTransaction>;
   };
 }

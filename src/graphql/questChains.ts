@@ -13,9 +13,6 @@ import {
   QuestChainSearchBySlugDocument,
   QuestChainSearchBySlugQuery,
   QuestChainSearchBySlugQueryVariables,
-  QuestChainSearchDocument,
-  QuestChainSearchQuery,
-  QuestChainSearchQueryVariables,
 } from './types';
 
 export const getQuestChainAddresses = async (chainId: string, limit: number): Promise<string[]> => {
@@ -46,22 +43,6 @@ export const getQuestChainInfo = async (chainId: string, address: string): Promi
     return null;
   }
   return data.questChain ?? null;
-};
-
-export const getQuestChainsFromSearch = async (chainId: string, search: string): Promise<QuestChainInfoFragment[]> => {
-  const { data, error } = await getClient(chainId)
-    .query<QuestChainSearchQuery, QuestChainSearchQueryVariables>(QuestChainSearchDocument, {
-      search: search.toLowerCase(),
-      limit: 1000,
-    })
-    .toPromise();
-  if (!data) {
-    if (error) {
-      throw error;
-    }
-    return [];
-  }
-  return data.questChains;
 };
 
 export const getQuestChainsFromSlug = async (chainId: string, slug: string): Promise<QuestChainInfoFragment[]> => {

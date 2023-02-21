@@ -1,6 +1,7 @@
 export * from './globalInfo';
 export * from './questReviews';
 export * from './questChains';
+export * from './searchAndFilter';
 export * from './questStatuses';
 export * from './badgesForUser';
 export * from './statusForUser';

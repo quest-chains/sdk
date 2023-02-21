@@ -28,13 +28,14 @@ query QuestChainAddresses($limit: Int!) {
   }
 }
 
-query QuestChainSearch($search: String, $limit: Int) {
-  questChains(
-    first: $limit
-    where: { search_contains: $search, paused: false }
-    orderBy: createdAt
-    orderDirection: desc
-  ) {
+query QuestChainSearch(
+  $orderDirection: OrderDirection
+  $orderBy: QuestChain_orderBy
+  $where: QuestChain_filter
+  $limit: Int
+  $skip: Int
+) {
+  questChains(skip: $skip, first: $limit, where: $where, orderBy: $orderBy, orderDirection: $orderDirection) {
     ...QuestChainInfo
   }
 }

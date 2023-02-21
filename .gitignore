@@ -3,3 +3,4 @@
 node_modules
 dist
 src/graphql/types.ts
+*.sw[a-z]
