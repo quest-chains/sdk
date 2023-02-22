@@ -1,7 +1,7 @@
 import { getClient } from './client';
 import {
   OrderDirection,
-  QuestChainInfoFragment,
+  QuestChainDisplayFragment,
   QuestChainSearchDocument,
   QuestChainSearchQuery,
   QuestChainSearchQueryVariables,
@@ -22,7 +22,7 @@ export type QuestChainFiltersInfo = {
 export const getQuestChainsFromFilters = async (
   chainId: string,
   filters: QuestChainFiltersInfo,
-): Promise<QuestChainInfoFragment[]> => {
+): Promise<QuestChainDisplayFragment[]> => {
   const query: QuestChainSearchQueryVariables = {};
   query.where = {};
   if (filters.search) {

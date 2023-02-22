@@ -25,6 +25,45 @@ fragment QuestInfo on Quest {
   description
 }
 
+fragment QuestChainTokenInfo on QuestChainToken {
+  tokenId
+  tokenAddress
+  name
+  description
+  imageUrl
+  externalUrl
+  mimeType
+  owners {
+    id
+  }
+}
+
+fragment QuestChainDisplay on QuestChain {
+  address: id
+  version
+  premium
+  paused
+  chainId
+  updatedAt
+  createdAt
+  createdBy {
+    id
+  }
+  name
+  numQuests: questCount
+  numQuesters
+  numCompletedQuesters
+  description
+  imageUrl
+  slug
+  categories
+  token {
+    tokenId
+    tokenAddress
+    mimeType
+  }
+}
+
 fragment QuestChainInfo on QuestChain {
   address: id
   version
@@ -37,6 +76,7 @@ fragment QuestChainInfo on QuestChain {
     id
   }
   name
+  numQuests: questCount
   numQuesters
   numCompletedQuesters
   description
@@ -59,14 +99,7 @@ fragment QuestChainInfo on QuestChain {
     address: id
   }
   token {
-    tokenId
-    tokenAddress
-    name
-    description
-    imageUrl
-    owners {
-      id
-    }
+    ...QuestChainTokenInfo
   }
 }
 

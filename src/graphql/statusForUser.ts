@@ -41,7 +41,7 @@ export const getStatusForUser = async (chainId: string, address: string): Promis
     .filter(value => value.length !== 0)
     .map(value => {
       const chain = value[0].questChain;
-      const total = chain.quests.filter(q => !q.paused).length;
+      const total = chain.numQuests;
       const completed = value.filter(a => !a.quest.paused).reduce((t, a) => t + (a.status === 'pass' ? 1 : 0), 0);
       const updatedAt = value.filter(a => !a.quest.paused).reduce((t, a) => (t > a.updatedAt ? t : a.updatedAt), '0');
       const questStatuses = value

@@ -1,11 +1,16 @@
 import { getClient } from './client';
-import { QuestChainInfoFragment, RolesForUserDocument, RolesForUserQuery, RolesForUserQueryVariables } from './types';
+import {
+  QuestChainDisplayFragment,
+  RolesForUserDocument,
+  RolesForUserQuery,
+  RolesForUserQueryVariables,
+} from './types';
 
 export type UserRoles = {
-  ownerOf: QuestChainInfoFragment[];
-  adminOf: QuestChainInfoFragment[];
-  editorOf: QuestChainInfoFragment[];
-  reviewerOf: QuestChainInfoFragment[];
+  ownerOf: QuestChainDisplayFragment[];
+  adminOf: QuestChainDisplayFragment[];
+  editorOf: QuestChainDisplayFragment[];
+  reviewerOf: QuestChainDisplayFragment[];
   chainId: string;
 };
 

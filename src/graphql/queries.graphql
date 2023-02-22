@@ -4,20 +4,20 @@ query GlobalInfo {
   }
 }
 
-query QuestChainsInfo($limit: Int) {
-  questChains(first: $limit, where: { paused: false }) {
-    ...QuestChainInfo
-  }
-}
-
 query CreatedQuestChainsInfo($limit: Int, $user: String) {
   questChains(first: $limit, where: { createdBy: $user }, orderBy: createdAt, orderDirection: desc) {
-    ...QuestChainInfo
+    ...QuestChainDisplay
   }
 }
 
 query QuestChainInfo($address: ID!) {
   questChain(id: $address) {
+    ...QuestChainInfo
+  }
+}
+
+query QuestChainsFromAddresses($addresses: [ID!]!) {
+  questChains(where: { id_in: $addresses }, first: 1000) {
     ...QuestChainInfo
   }
 }
@@ -36,13 +36,19 @@ query QuestChainSearch(
   $skip: Int
 ) {
   questChains(skip: $skip, first: $limit, where: $where, orderBy: $orderBy, orderDirection: $orderDirection) {
-    ...QuestChainInfo
+    ...QuestChainDisplay
   }
 }
 
 query QuestChainSearchBySlug($slug: String) {
-  questChains(where: { slug: $slug }) {
+  questChains(where: { slug: $slug }, first: 1) {
     ...QuestChainInfo
+  }
+}
+
+query QuestChainValidateSlug($slug: String) {
+  questChains(where: { slug: $slug }, first: 1) {
+    id
   }
 }
 
@@ -73,16 +79,16 @@ query StatusForUserAndChain($user: String!, $address: String!, $limit: Int) {
 query RolesForUser($address: ID!) {
   user(id: $address) {
     ownerOf {
-      ...QuestChainInfo
+      ...QuestChainDisplay
     }
     adminOf {
-      ...QuestChainInfo
+      ...QuestChainDisplay
     }
     editorOf {
-      ...QuestChainInfo
+      ...QuestChainDisplay
     }
     reviewerOf {
-      ...QuestChainInfo
+      ...QuestChainDisplay
     }
   }
 }
