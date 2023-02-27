@@ -19,6 +19,22 @@ export type QuestChainFiltersInfo = {
   limit?: number;
 };
 
+const fetchWithFilters = async (
+  chainId: string,
+  query: QuestChainSearchQueryVariables,
+): Promise<QuestChainDisplayFragment[]> => {
+  const { data, error } = await getClient(chainId)
+    .query<QuestChainSearchQuery, QuestChainSearchQueryVariables>(QuestChainSearchDocument, query)
+    .toPromise();
+  if (!data) {
+    if (error) {
+      throw error;
+    }
+    return [];
+  }
+  return data.questChains;
+};
+
 export const getQuestChainsFromFilters = async (
   chainId: string,
   filters: QuestChainFiltersInfo,
@@ -33,9 +49,6 @@ export const getQuestChainsFromFilters = async (
   } else if (filters.onlyDisabled) {
     query.where.paused = true;
   }
-  if ((filters.categories?.length ?? 0) !== 0) {
-    query.where.categories_contains_nocase = filters.categories;
-  }
   if (filters.orderBy) {
     query.orderBy = filters.orderBy;
   }
@@ -45,14 +58,15 @@ export const getQuestChainsFromFilters = async (
   query.skip = filters.skip ?? 0;
   query.limit = filters.limit ?? 1000;
 
-  const { data, error } = await getClient(chainId)
-    .query<QuestChainSearchQuery, QuestChainSearchQueryVariables>(QuestChainSearchDocument, query)
-    .toPromise();
-  if (!data) {
-    if (error) {
-      throw error;
-    }
-    return [];
+  if (!filters.categories || filters.categories.length === 0) {
+    return fetchWithFilters(chainId, query);
   }
-  return data.questChains;
+
+  const resultArray = await Promise.all(
+    filters.categories.map(c =>
+      fetchWithFilters(chainId, { ...query, where: { ...query.where, categories_contains_nocase: [c] } }),
+    ),
+  );
+
+  return resultArray.reduce((t, a) => [...t, ...a], []);
 };
