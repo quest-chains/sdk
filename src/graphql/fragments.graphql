@@ -151,3 +151,13 @@ fragment QuestChainReviewInfo on QuestChain {
     id
   }
 }
+
+fragment QuestChainCompletedInfo on QuestChain {
+  address: id
+  paused
+  version
+  chainId
+  completedQuesters {
+    address: id
+  }
+}

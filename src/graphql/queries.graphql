@@ -16,6 +16,12 @@ query QuestChainInfo($address: ID!) {
   }
 }
 
+query QuestChainCompletedInfo($address: ID!) {
+  questChain(id: $address) {
+    ...QuestChainCompletedInfo
+  }
+}
+
 query QuestChainsFromAddresses($addresses: [ID!]!) {
   questChains(where: { id_in: $addresses }, first: 1000) {
     ...QuestChainInfo
