@@ -113,6 +113,8 @@ query BadgesForUser($address: ID!) {
       name
       description
       imageUrl
+      tokenAddress
+      tokenId
       questChain {
         address
       }
