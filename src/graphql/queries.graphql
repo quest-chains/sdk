@@ -117,6 +117,7 @@ query BadgesForUser($address: ID!) {
       tokenId
       questChain {
         address
+        slug
       }
     }
   }

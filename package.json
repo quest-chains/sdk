@@ -1,7 +1,7 @@
 {
   "name": "@quest-chains/sdk",
   "description": "An SDK for building applications on top of Quest Chains",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
