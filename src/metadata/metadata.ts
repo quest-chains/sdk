@@ -71,7 +71,7 @@ export class MetadataUploader extends EventEmitter {
 
     try {
       const res = await axios.post(`${apiUrl ?? this.apiUrl}/upload/files`, formData, config);
-      return res.data.response;
+      return res.data.response['/'];
     } catch (error) {
       throw new Error(((error as AxiosError).response?.data as HttpResponse).error);
     }
